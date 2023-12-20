@@ -12,6 +12,47 @@
   "activationEvents": [],
   "main": "./src/extension.js",
   "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "AI Tool",
+      "properties": {
+        "ai-tool.baseURL": {
+          "oneOf": [
+            {
+              "type": "string",
+              "enum": [
+                "https://api.openai.com/v1",
+                "http://localhost:1234/v1"
+              ]
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "default": "https://api.openai.com/v1"
+        },
+        "ai-tool.apiKey": {
+          "type": "string",
+          "default": "sk-xxx"
+        },
+        "ai-tool.model": {
+          "oneOf": [
+            {
+              "type": "string",
+              "enum": [
+                "gpt-4-32k",
+                "gpt-3.5-turbo-16k",
+                "vicuna-13B-v1.5-16K"
+              ]
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "default": "gpt-4-32k"
+        }
+      }
+    },
     "commands": []
   },
   "scripts": {
