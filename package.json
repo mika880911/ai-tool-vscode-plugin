@@ -2,6 +2,7 @@
   "name": "ai-tool",
   "displayName": "AI Tool",
   "description": "",
+  "publisher": "Mika",
   "version": "1.0.0",
   "engines": {
     "vscode": "^1.85.0"
