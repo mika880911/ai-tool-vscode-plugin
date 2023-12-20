@@ -53,7 +53,25 @@
         }
       }
     },
-    "commands": []
+    "commands": [
+      {
+        "command": "ai-tool.generateCommitMessage",
+        "title": "AI Tool: Generate Commit Message",
+        "icon": {
+          "dark": "resources/icons/24x24.png",
+          "light": "resources/icons/24x24.png"
+        }
+      }
+    ],
+    "menus": {
+      "scm/title": [
+        {
+          "command": "ai-tool.generateCommitMessage",
+          "when": "scmProvider == git",
+          "group": "navigation"
+        }
+      ]
+    }
   },
   "scripts": {
     "lint": "eslint .",
@@ -61,12 +79,15 @@
     "test": "vscode-test"
   },
   "devDependencies": {
-    "@types/vscode": "^1.85.0",
     "@types/mocha": "^10.0.6",
     "@types/node": "18.x",
-    "eslint": "^8.54.0",
-    "typescript": "^5.3.2",
+    "@types/vscode": "^1.85.0",
     "@vscode/test-cli": "^0.0.4",
-    "@vscode/test-electron": "^2.3.8"
+    "@vscode/test-electron": "^2.3.8",
+    "eslint": "^8.54.0",
+    "typescript": "^5.3.2"
+  },
+  "dependencies": {
+    "node-fetch-commonjs": "^3.3.2"
   }
 }
